@@ -34,7 +34,6 @@ class ItemTableViewController: UITableViewController {
             newItem.checked = false
             self.tableView.reloadData()
             try! self.realm.write {
-                //self.realm.add(newItem)
                 self.category?.items.append(newItem)
             }
             self.tableView.reloadData()
@@ -65,6 +64,8 @@ class ItemTableViewController: UITableViewController {
 
         cell.textLabel?.text = itemArray[indexPath.row].name
 
+        
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
